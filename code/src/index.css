@@ -33,6 +33,9 @@ button {
   font-size: 20px;
   outline: none;
 }
+button:hover {
+  border-bottom: 1px solid #f24141;
+}
 img {
   height: 400px;
 }
