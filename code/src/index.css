@@ -59,7 +59,7 @@ i {
   margin-top: -40px;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 750px) {
   .twigs {
     display: none;
   }
