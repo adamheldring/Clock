@@ -6,7 +6,7 @@ class Clock extends React.Component {
   state = {
     date: new Date(),
     clockRunning: false,
-    buttonText: "Loading"
+    buttonText: "Loading..."
   }
 
   componentDidMount = () => {
@@ -27,14 +27,14 @@ class Clock extends React.Component {
     )
     this.setState({
       clockRunning: true,
-      buttonText: "Stop"
+      buttonText: "STOP"
     })
   }
   stopClock = () => {
     clearInterval(this.timerID)
     this.setState({
       clockRunning: false,
-      buttonText: "Start"
+      buttonText: "START"
     })
   }
   clickStartStop = () => {
@@ -47,10 +47,14 @@ class Clock extends React.Component {
 
   render() {
     return (
-      <div>
-        <h1>Hello, world!</h1>
-        <h2>It is {this.state.date.toLocaleTimeString()}</h2>
-        <button onClick={this.clickStartStop}>{this.state.buttonText}</button>
+      <div className="masterContainer">
+        <img src="./images/thymeLeft.png"></img>
+        <div className="clockContainer">
+          <h1>THYME</h1>
+          <h2>{this.state.date.toLocaleTimeString()}</h2>
+          <button onClick={this.clickStartStop}>{this.state.buttonText}</button>
+        </div>
+        <img src="./images/thymeRight.png"></img>
       </div>
     )
   }

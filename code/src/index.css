@@ -1,5 +1,71 @@
+/* @import url('https://fonts.googleapis.com/css?family=Poppins:400,700');
+@import url('https://fonts.googleapis.com/css?family=Abril+Fatface'); */
+
+@import url('https://fonts.googleapis.com/css?family=Abril+Fatface|Roboto+Mono');
+
 body {
+  font-family: 'Poppins', sans-serif;
   margin: 0;
   padding: 0;
   font-family: sans-serif;
+  color: #FFF;
+  background: #272727;
+}
+h1, h2 {
+  font-family: monospace;
+  font-weight: 400;
+}
+h1 {
+  font-family: 'Abril Fatface', cursive;
+  font-size: 130px;
+  /* background: pink; */
+  margin: 0;
+  color: #5FC949;
+}
+h2 {
+  font-family: 'Roboto Mono', monospace;
+  font-size: 95px;
+  margin: 0;
+  margin-top: -30px;
+  /* width: 100%; */
+}
+button {
+  border: none;
+  margin-top: 10px;
+  width: 200px;
+  padding: 10px 0;
+  background: #000;
+  color: #FFF;
+  font-weight: 700;
+  /* font-family: 'Abril Fatface', cursive; */
+  font-size: 20px;
+  border-bottom: 1px solid #b27701;
+  outline: none;
+  /* border-right: 1px solid #b27701; */
+  /* box-shadow: 2px 1px 10px #b27701; */
+  /* background: lightgrey; */
+}
+img {
+  height: 400px;
+}
+.masterContainer {
+  /* background: pink; */
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 70%;
+  margin: 0 auto;
+  margin-top: 90px;
+  /* padding: 30px; */
+
+  /* background: green; */
+}
+.clockContainer {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  /* width: 70%; */
+  /* margin: 0 auto; */
+  padding: 0 0px;
+  margin-top: -40px;
 }
