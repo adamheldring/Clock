@@ -6,22 +6,17 @@ class Clock extends React.Component {
   state = {
     date: new Date(),
     clockRunning: false,
-    buttonText: "Loading..."
+    buttonText: "Loading...",
+    timeOfDayIcon: "sun"
   }
-
   componentDidMount = () => {
     this.startClock()
   }
   componentWillUnmount = () => {
     this.stopClock()
   }
-  tick = () => {
-    this.setState({
-      date: new Date()
-    })
-  }
   startClock = () => {
-    this.timerID = setInterval (
+    this.timerID = setInterval(
       () => this.tick(),
       1000
     )
@@ -44,22 +39,36 @@ class Clock extends React.Component {
       this.startClock()
     }
   }
+  tick = () => {
+    this.setState({
+      date: new Date()
+    })
+    if (this.state.date.getHours() >= 8 && this.state.date.getHours() < 20) {
+      this.setState({
+        timeOfDayIcon: "sun"
+      })
+    } else {
+      this.setState({
+        timeOfDayIcon: "moon"
+      })
+    }
+  }
 
   render() {
     return (
       <div className="masterContainer">
-        <img src="./images/thymeLeft.png"></img>
+        <img src="./images/thymeLeft.png" className="twigs" alt="thyme twig" />
         <div className="clockContainer">
           <h1>THYME</h1>
           <h2>{this.state.date.toLocaleTimeString()}</h2>
+          <i className={`fas fa-${this.state.timeOfDayIcon}`} />
           <button onClick={this.clickStartStop}>{this.state.buttonText}</button>
         </div>
-        <img src="./images/thymeRight.png"></img>
+        <img src="./images/thymeRight.png" className="twigs" alt="thyme twig" />
       </div>
     )
   }
 
 }
 
-ReactDOM.render(<Clock />,
-document.getElementById("root"))
+ReactDOM.render(<Clock />, document.getElementById("root"))
